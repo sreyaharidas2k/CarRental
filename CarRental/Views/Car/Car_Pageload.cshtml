@@ -1,0 +1,64 @@
+﻿@model CarRental.Models.Carcls
+@{
+    ViewData["Title"] = "Car";
+}
+<form asp-action="Car_click" asp-controller="Car" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label class="control-label">Brand</label>
+        <input asp-for="brand" class="form-control" />
+        <span asp-validation-for="brand" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Model</label>
+        <input asp-for="model" class="form-control" />
+        <span asp-validation-for="model" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Year</label>
+        <input asp-for="year" class="form-control" />
+        <span asp-validation-for="year" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Color</label>
+        <input asp-for="color" class="form-control" />
+        <span asp-validation-for="color" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">NumberPlate</label>
+        <input asp-for="numberplate" class="form-control" />
+        <span asp-validation-for="numberplate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Engine</label>
+        <input asp-for="engine" class="form-control" />
+        <span asp-validation-for="engine" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Fuel</label>
+        <input asp-for="fuel" class="form-control" />
+        <span asp-validation-for="fuel" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Image</label>
+        <input asp-for="ImageFile" type="file" name="ImageFile" id="ImageFile" accept="image/*" />
+        @* <span asp-validation-for="ImageFile" class="text-danger"></span> *@
+    </div>
+    <div class="form-group">
+        <label class="control-label">SeatCapacity</label>
+        <input asp-for="seatcapacity" class="form-control" />
+        <span asp-validation-for="seatcapacity" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Insert" class="btn btn-success" />
+    </div>
+</form>
+@{
+    if (TempData["msg"] != null)
+    {
+        <script>
+            alert('@TempData["msg"]');
+        </script>
+    }
+}

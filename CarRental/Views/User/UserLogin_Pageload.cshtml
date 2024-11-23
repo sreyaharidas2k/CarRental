@@ -1,0 +1,74 @@
+﻿ @model CarRental.Models.Usercls
+
+
+ 
+@* @using (Html.BeginForm("UserLogin_Click", "User", FormMethod.Post, new { enctype = "multipart/form-data" })) 
+     { 
+         <div>
+            <label>Name:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.name)
+            @Html.ValidationMessageFor(m => m.name)
+        </div>
+        <div>
+            <label>Address:</label>
+        </div>
+        <div>
+            @Html.TextAreaFor(m => m.uadd)
+            @Html.ValidationMessageFor(m => m.uadd)
+        </div>
+        <div>
+            <label>Phone:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.uphn)
+            @Html.ValidationMessageFor(m => m.uphn)
+        </div>
+        <div>
+            <label>Email:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.uemail)
+            @Html.ValidationMessageFor(m => m.uemail)
+        </div>
+        
+        
+        <div>
+            <label>Username:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.username)
+            @Html.ValidationMessageFor(m => m.username)
+        </div>
+        <div>
+            <label>Password:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.upwd)
+
+        </div>
+        <div>
+            <label>Confirm Password:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.ucpwd)
+            @Html.ValidationMessageFor(m => m.ucpwd)
+        </div>
+        <div>
+            <input type="submit" value="Insert" />
+            @Html.DisplayFor(m => m.usermsg)
+        </div>
+
+
+    }
+</div>  *@
+
+@{
+    if (TempData["msg"] != null)
+    {
+        <script>
+            alert('@TempData["msg"]');
+        </script>
+    }
+}

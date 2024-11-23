@@ -1,0 +1,40 @@
+﻿@model CarRental.Models.Logincls
+@* <div>
+    @using (Html.BeginForm("Login_Click", "Login", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+<div>
+    <label>Username:</label>
+</div>
+<div>
+    @Html.TextBoxFor(m => m.uname)
+    @Html.ValidationMessageFor(m => m.uname)
+</div>
+<div>
+    <label>Password:</label>
+</div>
+<div>
+    @Html.TextBoxFor(m => m.pwd)
+
+</div>
+        <div>
+            <input type="submit" value="Insert" />
+            @Html.DisplayFor(m => m.lmsg)
+        </div>
+    }
+</div> *@
+
+<form asp-action="Login_Click" class="form-horizontal">
+
+    <div class="form-group">
+        <label class="control-label">Employee Name</label>
+        <input asp-for="uname" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label class="control-label">Employee Name</label>
+        <input asp-for="pwd" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Login" class="btn btn-success" />
+    </div>
+</form>

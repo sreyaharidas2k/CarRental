@@ -1,0 +1,75 @@
+﻿@model CarRental.Models.bookingcls
+<form asp-action="Rent_Click" class="form-horizontal" method="post">
+    <input type="hidden" name="carId" value="@(Model.CarDetails.Id)" />
+<div class="container">
+    <h2 class="text-center">Rent a Car</h2>
+    <div class="row">
+        <div class="col-md-6">
+             <img src="@Url.Content(Model.CarDetails.image)" alt="Car Image" class="img-fluid rounded"> 
+            <h3 class="text-center">@Model.CarDetails.brand @Model.CarDetails.model</h3>
+            <p class="text-center">@Model.CarDetails.model</p>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Booking Details</h5>
+                        <div class="form-group">
+                            <label for="pickupDate">Pickup Date:</label>
+                            <input type="date" id="pickupDate" name="pickupDate" onchange="calculateRentalAmount()" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="dropoffDate">Dropoff Date:</label>
+                            <input type="date" id="dropoffDate" name="dropoffDate" onchange="calculateRentalAmount()" class="form-control">
+                        </div>
+                    @* <div class="form-group">
+                        <label for="pickupDate">Pickup Date:</label>
+                        <input type="date" id="pickupDate" name="pickupDate" onchange="calculateRentalAmount()" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="dropoffDate">Dropoff Date:</label>
+                        <input type="date" id="dropoffDate" name="dropoffDate" onchange="calculateRentalAmount()" class="form-control">
+                    </div> *@
+                    <div class="form-group">
+                        <label for="rentalAmount">Rental Amount:</label>
+                        <input type="text" id="rentalAmount" name="rentalAmount" readonly class="form-control">
+                    </div>
+                    <input type="hidden" id="dailyRate" value="@Model.DailyRate" />
+                    @* <button type="submit" class="btn btn-primary">Rent Car</button> *@
+                    <button type="submit" class="btn btn-primary" id="book-btn">Book</button>
+                </div>
+            </div>
+                </div>
+        </div>
+    </div>
+        </form>
+    
+@{
+    if (TempData["msg"] != null)
+    {
+        <script>
+            alert('@TempData["msg"]');
+        </script>
+    }
+}
+               
+
+<script>
+    function calculateRentalAmount() {
+        var pickupDate = new Date(document.getElementById("pickupDate").value);
+        var dropoffDate = new Date(document.getElementById("dropoffDate").value);
+        var dateDiff = Math.round((dropoffDate - pickupDate) / (1000 * 3600 * 24));
+        if (dateDiff < 0) {
+            alert("Please pick a valid date.");
+            document.getElementById("rentalAmount").value = "";
+        } else if (dateDiff == 0) {
+            var dailyRate = document.getElementById("dailyRate").value;
+            var rentalAmount = dailyRate;
+            document.getElementById("rentalAmount").value = rentalAmount;
+        } else {
+            var dailyRate = document.getElementById("dailyRate").value;
+            var rentalAmount = dateDiff * dailyRate;
+            document.getElementById("rentalAmount").value = rentalAmount;
+        }
+    }
+</script>

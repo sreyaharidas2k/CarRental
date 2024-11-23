@@ -1,0 +1,67 @@
+﻿<style>
+    .cont
+    {
+        text-align:center;
+        
+        width:620px;
+        height: auto;
+        margin-left:400px;
+        margin-right:auto;
+        
+    }
+
+        .cont img {
+            display: block; /* Remove inline behavior */
+            max-width: 100%; /* Ensure the image is responsive */
+            height: 300px; /* Maintain aspect ratio */
+            margin-bottom: 0; /* Remove any bottom margin */
+            margin-top: 0; /* Optional: Ensure no top margin either */
+        }
+    .para{
+        text-align:center;
+        font-family:Cambria;
+        font-size:30px;
+        color:brown;
+        opacity:1.5;
+        margin-top: 10px; /* Adds a small space above the paragraph */
+        margin-bottom: 0;
+    }
+</style>
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="..\background image\honda civic.jpeg"  alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Find Your Perfect Ride</h5>
+                <p>Choose from a wide selection of cars, from compact to luxury, for your next trip. Book now and start your adventure with comfort and style!</p>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="..\background image\honda civic.jpeg"  alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="..\background image\honda civic.jpeg"  alt="Third slide">
+            </div>
+        </div>
+    </div>
+
+
+
+@* <div class="cont">
+
+    <img class="img" src="..\background image\honda civic.jpeg" />
+</div>
+    <p class="para">
+        Where Journeys Begin with the Perfect Ride.
+       </p>
+
+
+<div class="text-center">
+    
+    
+</div> *@
