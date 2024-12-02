@@ -1,69 +1,73 @@
 ﻿ @model CarRental.Models.Usercls
 
+ <h2 style="display:flex; align-items:center;justify-content:center;"><b>USER REGISTRATION</b></h2>
 
- 
-@* @using (Html.BeginForm("UserLogin_Click", "User", FormMethod.Post, new { enctype = "multipart/form-data" })) 
-     { 
-         <div>
-            <label>Name:</label>
+<form  asp-action="UserLogin_Click" class="form-horizontal" method="post">
+
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">Name</label>
+                <input asp-for="name" style="margin-left: 25px;margin-top:5px;width: 70%;" class="form-control" placeholder="Name" type="text">
+            </div>
         </div>
-        <div>
-            @Html.TextBoxFor(m => m.name)
-            @Html.ValidationMessageFor(m => m.name)
+    </div>
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">Address</label>
+                <input asp-for="uadd" style="margin-left: 25px;margin-top:5px;width: 70%;" class="form-control" placeholder="Address" type="text">
+            </div>
         </div>
-        <div>
-            <label>Address:</label>
+    </div>
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">Phone</label>
+                <input asp-for="uphn" style="margin-left: 25px;margin-top:5px;width: 70%;" class="form-control" placeholder="Phone Number" type="tel">
+            </div>
         </div>
-        <div>
-            @Html.TextAreaFor(m => m.uadd)
-            @Html.ValidationMessageFor(m => m.uadd)
+    </div>
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">Email</label>
+                <input asp-for="uemail" style="margin-left: 25px;margin-top:5px;width: 70%;" class="form-control" placeholder="Email" type="email">
+            </div>
         </div>
-        <div>
-            <label>Phone:</label>
+    </div>
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">Username</label>
+                <input asp-for="username" style="margin-left: 25px;margin-top:5px;width: 70%;" class="form-control" placeholder="Username" type="text">
+            </div>
         </div>
-        <div>
-            @Html.TextBoxFor(m => m.uphn)
-            @Html.ValidationMessageFor(m => m.uphn)
+    </div>
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">Password</label>
+                <input asp-for="upwd" style="margin-left: 25px;margin-top:5px;width: 70%;" class="form-control" placeholder="Password" type="password">
+            </div>
         </div>
-        <div>
-            <label>Email:</label>
+    </div>
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">Confirm Password</label>
+                <input asp-for="ucpwd" style="margin-left: 25px;margin-top:5px; width: 70%;" class="form-control" placeholder="Confirm Password" type="password">
+            </div>
         </div>
-        <div>
-            @Html.TextBoxFor(m => m.uemail)
-            @Html.ValidationMessageFor(m => m.uemail)
-        </div>
+    </div>
+
+
+    <div style="display:flex;justify-content:end;width:55%;margin-top:5px;" class="form-group">
+            <input type="submit"  value="Insert" class="btn btn-primary"/>
+            </div>
         
-        
-        <div>
-            <label>Username:</label>
-        </div>
-        <div>
-            @Html.TextBoxFor(m => m.username)
-            @Html.ValidationMessageFor(m => m.username)
-        </div>
-        <div>
-            <label>Password:</label>
-        </div>
-        <div>
-            @Html.TextBoxFor(m => m.upwd)
-
-        </div>
-        <div>
-            <label>Confirm Password:</label>
-        </div>
-        <div>
-            @Html.TextBoxFor(m => m.ucpwd)
-            @Html.ValidationMessageFor(m => m.ucpwd)
-        </div>
-        <div>
-            <input type="submit" value="Insert" />
-            @Html.DisplayFor(m => m.usermsg)
-        </div>
-
-
-    }
-</div>  *@
-
+            </form>
+          
 @{
     if (TempData["msg"] != null)
     {
@@ -72,3 +76,7 @@
         </script>
     }
 }
+<style></style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+

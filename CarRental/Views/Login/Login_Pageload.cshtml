@@ -1,40 +1,46 @@
 ﻿@model CarRental.Models.Logincls
-@* <div>
-    @using (Html.BeginForm("Login_Click", "Login", FormMethod.Post, new { enctype = "multipart/form-data" }))
-    {
-<div>
-    <label>Username:</label>
-</div>
-<div>
-    @Html.TextBoxFor(m => m.uname)
-    @Html.ValidationMessageFor(m => m.uname)
-</div>
-<div>
-    <label>Password:</label>
-</div>
-<div>
-    @Html.TextBoxFor(m => m.pwd)
 
-</div>
-        <div>
-            <input type="submit" value="Insert" />
-            @Html.DisplayFor(m => m.lmsg)
-        </div>
-    }
-</div> *@
+<h2 style="display:flex; align-items:center;justify-content:center;"><b>LOGIN FORM</b></h2>
 
 <form asp-action="Login_Click" class="form-horizontal">
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">Username</label>
+                <input asp-for="uname" style="margin-left: 25px;margin-top:5px;width: 70%;" class="form-control" placeholder="Username" type="text">
+            </div>
+        </div>
+    </div>
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">Password</label>
+                <input asp-for="pwd" style="margin-left: 25px;margin-top:5px;width: 70%;" class="form-control" placeholder="Password" type="text">
+            </div>
+        </div>
+    </div>
+    <div style="display:flex;justify-content:end;width:55%;margin-top:5px;" class="form-group">
+        <input type="submit" value="Login" class="btn btn-primary" />
+    </div>
+</form>
+@{
+    if(TempData["msg"]!=null)
+    {
+            <script>
+                alert('@TempData["msg"]');
+            </script>
+    }
+}
 
-    <div class="form-group">
-        <label class="control-label">Employee Name</label>
+@* <div class="form-group">
+        <label class="control-label">Username</label>
         <input asp-for="uname" class="form-control" />
     </div>
     <div class="form-group">
-        <label class="control-label">Employee Name</label>
+        <label class="control-label">Password</label>
         <input asp-for="pwd" class="form-control" />
     </div>
 
     <div class="form-group">
         <input type="submit" value="Login" class="btn btn-success" />
-    </div>
-</form>
+    </div> *@

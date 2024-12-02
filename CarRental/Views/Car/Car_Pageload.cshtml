@@ -2,58 +2,100 @@
 @{
     ViewData["Title"] = "Car";
 }
+
+    <h2 style="display:flex; align-items:center;justify-content:center;"><b>CAR REGISTRATION</b></h2>
+
 <form asp-action="Car_click" asp-controller="Car" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-        <label class="control-label">Brand</label>
-        <input asp-for="brand" class="form-control" />
-        <span asp-validation-for="brand" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label class="control-label">Model</label>
-        <input asp-for="model" class="form-control" />
-        <span asp-validation-for="model" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label class="control-label">Year</label>
-        <input asp-for="year" class="form-control" />
-        <span asp-validation-for="year" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label class="control-label">Color</label>
-        <input asp-for="color" class="form-control" />
-        <span asp-validation-for="color" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label class="control-label">NumberPlate</label>
-        <input asp-for="numberplate" class="form-control" />
-        <span asp-validation-for="numberplate" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label class="control-label">Engine</label>
-        <input asp-for="engine" class="form-control" />
-        <span asp-validation-for="engine" class="text-danger"></span>
-    </div>
 
-    <div class="form-group">
-        <label class="control-label">Fuel</label>
-        <input asp-for="fuel" class="form-control" />
-        <span asp-validation-for="fuel" class="text-danger"></span>
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">Brand</label>
+                <input asp-for="brand" style="margin-left: 25px;margin-top:5px;width: 70%;" class="form-control" placeholder="Brand" type="text">
+                <span asp-validation-for="brand" class="text-danger"></span>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label class="control-label">Image</label>
-        <input asp-for="ImageFile" type="file" name="ImageFile" id="ImageFile" accept="image/*" />
-        @* <span asp-validation-for="ImageFile" class="text-danger"></span> *@
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">Model</label>
+                <input asp-for="model" style="margin-left: 25px;margin-top:5px;width: 70%;" class="form-control" placeholder="Model" type="text">
+                <span asp-validation-for="model" class="text-danger"></span>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <label class="control-label">SeatCapacity</label>
-        <input asp-for="seatcapacity" class="form-control" />
-        <span asp-validation-for="seatcapacity" class="text-danger"></span>
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">Year</label>
+                <input asp-for="year" style="margin-left: 25px;margin-top:5px;width: 70%;" class="form-control" placeholder="Year" type="date">
+                <span asp-validation-for="year" class="text-danger"></span>
+            </div>
+        </div>
     </div>
-
-    <div class="form-group">
-        <input type="submit" value="Insert" class="btn btn-success" />
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">Color</label>
+                <input asp-for="color" style="margin-left: 25px;margin-top:5px;width: 70%;" class="form-control" placeholder="Color" type="text">
+                <span asp-validation-for="color" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">NumberPlate</label>
+                <input asp-for="numberplate" style="margin-left: 25px;margin-top:5px;width: 70%;" class="form-control" placeholder="NumberPlate" type="text">
+                <span asp-validation-for="numberplate" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">Engine</label>
+                <input asp-for="engine" style="margin-left: 25px;margin-top:5px;width: 70%;" class="form-control" placeholder="Engine" type="text">
+                <span asp-validation-for="engine" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">Fuel</label>
+                <input asp-for="fuel" style="margin-left: 25px;margin-top:5px;width: 70%;" class="form-control" placeholder="Fuel" type="text">
+                <span asp-validation-for="fuel" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">Image</label>
+                <input asp-for="ImageFile" style="margin-left: 25px;margin-top:5px;width: 70%;" class="form-control" placeholder="Image" type="file"> 
+            </div>
+        </div>
+    </div>
+    <div style="display:flex;justify-content:center;" class="form-group row">
+        <div style="width:50%;" class="col-md-12">
+            <div style="display:flex;align-items:center;justify-content:end;">
+                <label class="control-label" style="display: flex;width: 20%;justify-content: start;">SeatCapacity</label>
+                <input asp-for="seatcapacity" style="margin-left: 25px;margin-top:5px;width: 70%;" class="form-control" placeholder="SeatCapacity" type="text">
+                <span asp-validation-for="seatcapacity" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div style="display:flex;justify-content:end;width:55%;margin-top:5px;" class="form-group">
+        <input type="submit" value="Insert" class="btn btn-primary" />
     </div>
 </form>
+        @* <input asp-for="ImageFile" type="file" name="ImageFile" id="ImageFile" accept="image/*" /> *@
+        @* <span asp-validation-for="ImageFile" class="text-danger"></span> *@
+    
+    
+
 @{
     if (TempData["msg"] != null)
     {

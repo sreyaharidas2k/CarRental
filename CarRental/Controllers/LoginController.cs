@@ -39,24 +39,21 @@ namespace CarRental.Controllers
                         {
                             return RedirectToAction("SelectAll_Pageload", "SelectAll");
                         }
-                       
                     }
                     else
                     {
                         ModelState.Clear();
-                        // TempData["msg"] = "invalid login";
-                        logincls.lmsg = "Invalid Login";
+                        TempData["msg"] = "invalid login";
+                        //logincls.lmsg = "Invalid Login";
                         return View("Login_Pageload", logincls);
                     }
                 }
-             
             }
             catch (Exception ex)
             {
                 TempData["msg"] = ex.Message;
             }
             return View("Login_Pageload", logincls);
-
         }
     }
 }

@@ -14,7 +14,7 @@ namespace CarRental.Controllers
             {
                 CarDetails = carDetails,
                 RentalDetails = new Rentcls(),
-                DailyRate = 500 // Replace with the actual daily rate
+                DailyRate = 500 
             };
             return View(viewModel);
         }
@@ -26,7 +26,7 @@ namespace CarRental.Controllers
                 pickup = pickupDate,
                 dropoff = dropoffDate,
                 totalamt = rentalAmount.ToString(),
-                // Add other necessary properties
+                
             };
             string resp = dbobj.RentInsert(rentcls);
             var carDetails = dbobj.getcardetails(carId);

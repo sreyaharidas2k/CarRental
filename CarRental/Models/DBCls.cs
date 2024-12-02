@@ -225,11 +225,9 @@ namespace CarRental.Models
 
         public List<Carcls> SelectAllDetails()
         {
-
             var list=new List<Carcls>();
             try
             {
-
                 SqlCommand cmd1 = new SqlCommand("sp_displayall", con);
                 cmd1.CommandType = CommandType.StoredProcedure;
                 
@@ -253,7 +251,6 @@ namespace CarRental.Models
 
                     };
                     list.Add(o);
-
                 }
                 con.Close();
                 return list;

@@ -1,31 +1,33 @@
 ﻿<style>
-    .cont
-    {
-        text-align:center;
-        
-        width:620px;
-        height: auto;
-        margin-left:400px;
-        margin-right:auto;
-        
+    .carousel-item {
+        position: relative;
     }
 
-        .cont img {
-            display: block; /* Remove inline behavior */
-            max-width: 100%; /* Ensure the image is responsive */
-            height: 300px; /* Maintain aspect ratio */
-            margin-bottom: 0; /* Remove any bottom margin */
-            margin-top: 0; /* Optional: Ensure no top margin either */
-        }
-    .para{
-        text-align:center;
-        font-family:Cambria;
-        font-size:30px;
-        color:brown;
-        opacity:1.5;
-        margin-top: 10px; /* Adds a small space above the paragraph */
-        margin-bottom: 0;
+    Here is the full style code:
+
+    .carousel-item {
+        position: relative;
     }
+
+    .second-slide-caption {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translateY( -50%);
+        text-align: center;
+    }
+
+        .second-slide-caption h5 {
+            color: black;
+            font-size: 40px;
+        }
+
+        .second-slide-caption p {
+            color: black;
+            font-size: 20px;
+           
+        }
+
 </style>
 
 
@@ -33,35 +35,25 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+<div id="c1" class="carousel slide carousel-dark" style="margin-top:5px;" data-bs-carousel="carousel" data-bs-ride="carousel" data-interval="500">
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img class="d-block w-100" src="..\background image\honda civic.jpeg"  alt="First slide">
+        <div class="carousel-item active" style="height:700px;margin-right:5px;">
+            <img src="..\background image\carousel2.jpg" alt="Haiiiii" class="d-block w-100" />
             <div class="carousel-caption d-none d-md-block">
-                <h5>Find Your Perfect Ride</h5>
-                <p>Choose from a wide selection of cars, from compact to luxury, for your next trip. Book now and start your adventure with comfort and style!</p>
+                <h5 style="color: white;font-size: 40px;">Find Your Perfect Ride</h5>
+                <p style="color: white;">Choose from a wide selection of cars, from compact to luxury, for your next trip. Book now and start your adventure with comfort and style!</p>
             </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="..\background image\honda civic.jpeg"  alt="Second slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="..\background image\honda civic.jpeg"  alt="Third slide">
+        </div>
+        <div class="carousel-item" style="height:700px;">
+            <img src="..\background image\carousel1.jpeg" alt="welocome" class="d-block" style="width:100%;" />
+            
+        </div>
+        <div class="carousel-item" style="height:700px;">
+            <img src="..\background image\carousel.jpg" alt="Heloooo" class="d-block w-100" />
+            <div class="carousel-caption d-none d-md-block second-slide-caption">
+                <h5><b><i>Drive Your Dream Car</i></b></h5>
+                <p><b>Experience the freedom of renting a car that suits your style and budget. From economy to luxury, our fleet has got you covered.</b></p>
             </div>
         </div>
     </div>
 
-
-
-@* <div class="cont">
-
-    <img class="img" src="..\background image\honda civic.jpeg" />
-</div>
-    <p class="para">
-        Where Journeys Begin with the Perfect Ride.
-       </p>
-
-
-<div class="text-center">
-    
-    
-</div> *@
